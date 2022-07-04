@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('api_token', 80)->unique()->nullable()->default(null)->comment('guardが参照するapi_token');
             $table->boolean('manager_flag')->default(false)->comment('trueだとadmin権限を持つ');
 
+            // timestampsは絶対必要
             $table->timestamps();
         });
     }

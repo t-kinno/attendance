@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
 
+        // middlewareを動かすための記述
         'login' => \App\Http\Middleware\Login::class,
         
         
