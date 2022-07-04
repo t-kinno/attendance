@@ -11,7 +11,6 @@ class TimeHolidayController extends Controller{
         $items = DB::select('select * from timeholidays');
         return view('timeholiday.list', ['items'=>$items]);
     }
-    
     // DBにデータを挿入
     public function create(Request $request){
         $param = [
