@@ -34,6 +34,8 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 
 
+
+
 // admin権限のあるユーザの操作
 Route::middleware('auth:api', 'admin_auth')->group(function(){
     Route::get('/admin', function(){
