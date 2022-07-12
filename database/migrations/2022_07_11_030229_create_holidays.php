@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChords extends Migration
+class CreateHolidays extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateChords extends Migration
      */
     public function up()
     {
-        Schema::create('chords', function (Blueprint $table) {
-            $table->increments('chord_id'); //学年コードID
-            $table->integer('department_id')->nullable(false); //学科ID
-            $table->integer('chord_year')->nullable(false); //学年
-            $table->integer('course_id'); //コースID
+        Schema::create('holidays', function (Blueprint $table) {
+            $table->increments('holiday_id'); //休講日ID
+            $table->date('holiday')->nullable(false); //休講日
+            $table->string('holiday_cause')->nullable(false); // 休講理由
             $table->boolean('del_flag')->nullable(false)->default(0); //削除フラグ
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateChords extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chords');
+        Schema::dropIfExists('holidays');
     }
 }

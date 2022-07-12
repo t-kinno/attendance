@@ -20,8 +20,6 @@ class CreateDepartments extends Migration
             $table->integer('department_period')->nullable(false); //在学期間
             $table->boolean('department_flag')->nullable(false)->default(0); //卒業フラグ
             $table->boolean('flag')->nullable(false)->default(0); //有効無効
-            $table->dateTime('record_date'); //登録日
-            $table->dateTime('update_date'); //更新日
             $table->boolean('del_flag')->default(0); //削除フラグ
             $table->timestamps();
         });
