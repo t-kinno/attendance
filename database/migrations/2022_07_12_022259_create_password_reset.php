@@ -14,7 +14,10 @@ class CreatePasswordReset extends Migration
     public function up()
     {
         Schema::create('password_reset', function (Blueprint $table) {
-            $table->id();
+            $table->increments('pw_id'); //パスワードID
+            $table->string('email')->nullable(false); //メールアドレス
+            $table->dateTime('pw_effective_date')->nullable(false); // 有効期限
+            $table->string('pw_session_id')->nullable(false); // セッションID
             $table->timestamps();
         });
     }

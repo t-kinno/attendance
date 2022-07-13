@@ -16,10 +16,10 @@ class CreateTimetables extends Migration
         Schema::create('timetables', function (Blueprint $table) {
             $table->increments('timetable_id'); //時間割ID
             $table->integer('timetable_day')->nullable(false); //日にち
-            $table->integer('subject_id_period_1'); // 1限目（科目ID）
-            $table->integer('subject_id_period_2'); // 2限目（科目ID）
-            $table->integer('subject_id_period_3'); // 3限目（科目ID）
-            $table->integer('subject_id_period_4'); // 4限目（科目ID）
+            $table->integer('subject_id_period_1')->nullable(); // 1限目（科目ID）
+            $table->integer('subject_id_period_2')->nullable(); // 2限目（科目ID）
+            $table->integer('subject_id_period_3')->nullable(); // 3限目（科目ID）
+            $table->integer('subject_id_period_4')->nullable(); // 4限目（科目ID）
             $table->integer('chord_id')->nullable(false); //学年コードID
             $table->timestamps();
         });

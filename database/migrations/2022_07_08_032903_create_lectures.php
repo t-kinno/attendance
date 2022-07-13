@@ -16,7 +16,7 @@ class CreateLectures extends Migration
         Schema::create('lectures', function (Blueprint $table) {
             $table->integer('subject_id')->nullable(false); //科目ID
             $table->integer('student_id')->nullable(false); //生徒ID
-            $table->integer('change_subject_id'); //転科先の科目ID
+            $table->integer('change_subject_id')->nullable(); //転科先の科目ID
             $table->timestamps();
         });
     }

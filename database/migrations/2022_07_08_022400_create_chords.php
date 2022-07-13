@@ -17,7 +17,7 @@ class CreateChords extends Migration
             $table->increments('chord_id'); //学年コードID
             $table->integer('department_id')->nullable(false); //学科ID
             $table->integer('chord_year')->nullable(false); //学年
-            $table->integer('course_id'); //コースID
+            $table->integer('course_id')->nullable(); //コースID
             $table->boolean('del_flag')->nullable(false)->default(0); //削除フラグ
             $table->timestamps();
         });

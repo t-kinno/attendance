@@ -18,9 +18,9 @@ class CreateSubjects extends Migration
             $table->string('subject_name')->nullable(false); //科目名
             $table->integer('rulesubject_id')->nullable(false); //学則科目ID
             $table->integer('chord_id')->nullable(false); //学年コードID
-            $table->integer('subject_class_count')->default(0); //時間数
-            $table->integer('subject_teacher')->default(null); //担当講師ID
-            $table->boolean('subject_semester')->default(0); //前期後期区分
+            $table->integer('subject_class_count')->nullable()->default(0); //時間数
+            $table->integer('teacher_id')->default(null); //担当講師ID
+            $table->boolean('subject_semester')->nullable()->default(0); //前期後期区分
             $table->boolean('del_flag')->nullable(false)->default(0); //削除フラグ
             $table->timestamps();
         });

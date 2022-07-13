@@ -20,10 +20,10 @@ class CreateStudents extends Migration
             $table->string('student_ruby')->nullable(false); //ふりがな
             $table->integer('student_gender')->nullable(false); //性別
             $table->integer('department_id')->nullable(false); //学科ID
-            $table->integer('course_id'); //コースID
-            $table->string('student_scholarship'); //奨学金判定
-            $table->string('student_universal'); //大学編入希望の有無
-            $table->string('overview'); //備考欄
+            $table->integer('course_id')->nullable(); //コースID
+            $table->string('student_scholarship')->nullable(); //奨学金判定
+            $table->string('student_universal')->nullable(); //大学編入希望の有無
+            $table->string('overview')->nullable(); //備考欄
             $table->boolean('flag')->nullable(false)->default(0); //有効無効
             $table->boolean('del_flag')->nullable(false)->default(0); //削除フラグ
             $table->timestamps();
