@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>ログイン</title>
 </head>
+<!-- フラッシュメッセージ -->
+@if (session('flash_message'))
+<div class="flash_message">
+    {{ session('flash_message') }}
+</div>
+@endif
 
 <body id="login">
     <h1>ログインページ</h1>
     <p>ここはログイン画面です。</p>
 
     <form action="/login" method="post">
-    @csrf
+        @csrf
         <div>
             <label>メールアドレス：</label>
             <input type="text" name="email">
@@ -26,4 +32,5 @@
         <input type="submit" value="ログイン">
     </form>
 </body>
+
 </html>

@@ -33,14 +33,9 @@ class LoginController extends Controller
             $user->api_token = Str::random(60);
             $user->save();
 
-            if($manager_flag === 1){
-                return view('main.success_admin', ['manager_flag' => $manager_flag]);
-            } elseif($manager_flag === 0 ) {
-                return view('main.success_normal', ['manager_flag' => $manager_flag]);
-            } else {
-                return back();
-            }
+            session()->put('level', $manager_flag);
+            return redirect('/menu');
         }
-        return back();
+        return redirect('/login')->with('flash_message', 'ログインしてください');
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\TimeHolidayController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,27 +25,16 @@ Route::get('/', function () {
 休講日登録
 /****************************/  
 // laravel8以降の書き方
-Route::get('/holiday', [TimeHolidayController::class ,'index']);
-Route::post('/holiday', [TimeHolidayController::class ,'create']);
+Route::get('/holiday', [TimeHolidayController::class ,'index'])->middleware('auth');
+Route::post('/holiday', [TimeHolidayController::class ,'create'])->middleware('auth');
 
 /****************************  
 ログイン画面
 /****************************/  
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-
-
-
-// admin権限のあるユーザの操作
-Route::middleware('auth:api', 'admin_auth')->group(function(){
-    Route::get('/admin', function(){
-        return 'you are admin user!';
-    });
-});
-// user権限、admin権限のあるユーザの操作
-Route::middleware('auth:api')->group(function(){
-    Route::get('/user', function(){
-        return 'you are member user!';
-    });
-});
+/****************************  
+メニュー画面
+/****************************/  
+Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');;
