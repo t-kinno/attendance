@@ -19,7 +19,12 @@ class DatabaseSeeder extends Seeder
             // DepartmentsTableSeeder::class,
             // CoursesSeeder::class,
             // ChordsSeeder::class,
-            StudentsSeeder::class,
+            // StudentsSeeder::class,
+            // RulesubjectsSeeder::class,
+            // TeachersSeeder::class,
+            // SubjectsSeeder::class,
+            // LecturesSeeder::class,
+            TimetablesSeeder::class,
         ]);
     }
 }
