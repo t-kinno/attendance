@@ -25,13 +25,13 @@ class LoginController extends Controller
         if(Auth::guard($guard)->attempt($credentials)) {
             //ログインをする度にapi_tokenのアップデート
             $user_info = User::whereEmail($request->email)->first(); //userのメールアドレスの取得
-            $user_id = $user_info->id;
+            // $user_id = $user_info->id;
             $manager_flag = $user_info->manager_flag;
 
-            //usersテーブルから対象userを見つけてapi_tokenを再生成する。
-            $user = User::find($user_id);
-            $user->api_token = Str::random(60);
-            $user->save();
+            // //usersテーブルから対象userを見つけてapi_tokenを再生成する。
+            // $user = User::find($user_id);
+            // $user->api_token = Str::random(60);
+            // $user->save();
 
             session()->put('level', $manager_flag);
             return redirect('/menu');

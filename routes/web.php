@@ -37,4 +37,4 @@ Route::post('/login', [LoginController::class, 'login']);
 /****************************  
 メニュー画面
 /****************************/  
-Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');;
+Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');
