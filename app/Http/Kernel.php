@@ -61,6 +61,10 @@ class Kernel extends HttpKernel
 
         // middlewareを動かすための記述
         // 'login' => \App\Http\Middleware\Login::class,
+
+        // 追加
+        'administrator' => \App\Http\Middleware\VerifyAdminUser::class,
+        
         
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

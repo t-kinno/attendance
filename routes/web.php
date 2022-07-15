@@ -23,18 +23,25 @@ Route::get('/', function () {
 
 /****************************  
 休講日登録
-/****************************/  
+/****************************/
 // laravel8以降の書き方
-Route::get('/holiday', [TimeHolidayController::class ,'index'])->middleware('auth');
-Route::post('/holiday', [TimeHolidayController::class ,'create'])->middleware('auth');
+Route::get('/holiday', [TimeHolidayController::class, 'index'])->middleware('auth');
+Route::post('/holiday', [TimeHolidayController::class, 'create'])->middleware('auth');
 
 /****************************  
 ログイン画面
-/****************************/  
+/****************************/
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 /****************************  
 メニュー画面
-/****************************/  
+/****************************/
 Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');
+
+
+// middlewareにadministratorを追加
+// 非管理者がこのグループにアクセスしようとすると404が帰ってくる
+Route::group(['middleware' => ['auth', 'administrator']], function () {
+    Route::get('/menu', [MenuController::class, 'index'])->name('admin.dashboard');
+});

@@ -15,9 +15,11 @@ class TimeHolidayController extends Controller
             return view('timeholiday.list', ['items' => $items]);
         } else {
             // メニューに飛ばす->URLの後ろにクエリ文字(エラーコード)->特定のエラーコードがあった場合にエラー内容を表示
-            return redirect('');
+            $level_error = 'level_error';
+            return view('main.menu', ['level_error'=>$level_error]);
         }
     }
+    
     // DBにデータを挿入
     public function create(Request $request)
     {

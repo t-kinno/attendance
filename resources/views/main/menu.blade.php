@@ -7,6 +7,11 @@
 @endif
 
 @section('content')
+
+    @if($level_error !== "")
+    <p>{{$level_error}}</p>
+    @endif
+
     <div id="menu">
         @yield('menu')
     </div>
