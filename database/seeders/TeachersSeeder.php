@@ -18,7 +18,6 @@ class TeachersSeeder extends Seeder
     {
         DB::table('teachers')->insert([
             [
-                //admin権限を持つユーザー
                 'teacher_name' => '細川',
                 'email' => 'test1@test',
                 'normal' => false,
@@ -29,7 +28,6 @@ class TeachersSeeder extends Seeder
                 'manager_flag' => true,
             ],
             [
-                //admin権限を持たないユーザー
                 'teacher_name' => '金野',
                 'email' => 'test2@test',
                 'normal' => true,

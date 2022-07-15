@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
             // TeachersSeeder::class,
             // SubjectsSeeder::class,
             // LecturesSeeder::class,
-            TimetablesSeeder::class,
+            // TimetablesSeeder::class,
+            // HolidaysSeeder::class,
+            CheckSeeder::class,
+
         ]);
     }
 }
