@@ -63,7 +63,7 @@ class Kernel extends HttpKernel
         // 'login' => \App\Http\Middleware\Login::class,
 
         // 追加
-        'administrator' => \App\Http\Middleware\VerifyAdminUser::class,
+        'administrator' => \App\Http\Middleware\level::class,
         
         
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
