@@ -16,10 +16,8 @@ class level
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
-
-        $manager_flag = $request->manager_flag();
-
-        if (!$manager_flag === 1) {
+        
+        if (session()->get('level')=== 1) {
             abort(404);
         }
 
