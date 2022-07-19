@@ -3,6 +3,7 @@
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\TimeHolidayController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,31 +18,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-/****************************  
-休講日登録
-/****************************/
-// laravel8以降の書き方
-Route::get('/holiday', [TimeHolidayController::class, 'index'])->middleware('auth');
-Route::post('/holiday', [TimeHolidayController::class, 'create'])->middleware('auth');
-
 /****************************  
 ログイン画面
 /****************************/
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-
-/****************************  
-メニュー画面
-/****************************/
-Route::get('/menu', [MenuController::class, 'index'])->middleware('auth');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
 
 
-// middlewareにadministratorを追加
-// 非管理者がこのグループにアクセスしようとすると404が帰ってくる
-Route::group(['middleware' => ['auth', 'administrator']], function () {
-    Route::get('/menu', [MenuController::class, 'index'])->name('admin.dashboard');
+// 管理者用グループ
+Route::group(['middleware' => ['auth', 'level']], function () {
+
+    /****************************  
+    ユーザー登録
+    *****************************/
+    Route::get('/users', [UserController::class, 'index']);
+    Route::post('/users', [UserController::class, 'create']);
+
+
+    /****************************  
+    休講日登録
+    *****************************/
+    Route::get('/holiday', [TimeHolidayController::class, 'index']);
+    Route::post('/holiday', [TimeHolidayController::class, 'create']);
+    
+});
+
+// 管理者、常勤・非常勤用グループ
+Route::group(['middleware' => 'auth'], function () {
+
+    /****************************  
+    メニュー画面
+    *****************************/
+    Route::get('/menu', [MenuController::class, 'index']);
+
 });

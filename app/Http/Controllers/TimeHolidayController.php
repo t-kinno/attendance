@@ -10,14 +10,8 @@ class TimeHolidayController extends Controller
     // DBからデータを取得
     public function index(Request $request)
     {
-        if (session()->get('level') === 1) {
-            $items = DB::select('select * from timeholidays');
-            return view('timeholiday.list', ['items' => $items]);
-        } else {
-            // メニューに飛ばす->URLの後ろにクエリ文字(エラーコード)->特定のエラーコードがあった場合にエラー内容を表示
-            $level_error = 'level_error';
-            return view('main.menu', ['level_error'=>$level_error]);
-        }
+        $items = DB::select('select * from timeholidays');
+        return view('timeholiday.list', ['items' => $items]);
     }
     
     // DBにデータを挿入

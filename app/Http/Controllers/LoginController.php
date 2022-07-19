@@ -29,6 +29,6 @@ class LoginController extends Controller
             session()->put('level', $manager_flag);
             return redirect('/menu');
         }
-        return redirect('/login')->with('flash_message', 'ログインしてください');
+        return redirect('/')->with('flash_message', 'ログインしてください');
     }
 }

@@ -19,7 +19,7 @@
     <h1>ログインページ</h1>
     <p>ここはログイン画面です。</p>
 
-    <form action="/login" method="post">
+    <form action="/" method="post">
         @csrf
         <div>
             <label>メールアドレス：</label>

@@ -8,8 +8,8 @@
 
 @section('content')
 
-    @if($level_error !== "")
-    <p>{{$level_error}}</p>
+    @if(null !== (session('level_error')))
+        <p>{{ session('level_error') }}</p>
     @endif
 
     <div id="menu">

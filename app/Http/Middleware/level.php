@@ -16,9 +16,9 @@ class level
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
-        
-        if (session()->get('level')=== 1) {
-            abort(404);
+
+        if (session()->get('level') !== 1) {
+            return redirect('/menu')->with('level_error', 'レベルエラー');
         }
 
         return $next($request);
