@@ -4,46 +4,53 @@
 
 @section('content')
 <h1>ユーザー登録ページ</h1>
-    <p>ここはユーザー登録閲覧・登録・編集画面です。</p>
+<p>ここはユーザー登録閲覧・登録・編集画面です。</p>
 
-    <form action="/user" method="post">
+<form action="/user" method="post">
     @csrf
-        <div>
-            <label>ユーザー名：
+    <div>
+        @if ($errors->has('teacher_name'))
+        <p>ERROR:{{$errors->first('teacher_name')}}</p>
+        @endif
+        <label>ユーザー名：
             <input type="text" name="teacher_name"></label>
-        </div>
-        <div>
-            <label>メールアドレス：
+
+    </div>
+    <div>
+        @if ($errors->has('email'))
+        <p>ERROR:{{$errors->first('email')}}</p>
+        @endif
+        <label>メールアドレス：
             <input type="texts" name="email"></label>
-        </div>
-        <div>
+    </div>
+    <div>
+        @if ($errors->has('normal'))
+        <p>ERROR:{{$errors->first('normal')}}</p>
+        @endif
         <label><input type="radio" name="normal" value="true" checked>常勤</label>
         <label><input type="radio" name="normal" value="false">非常勤</label>
-        </div>
-        <input type="submit" value="登録">
-    </form>
-    <table border="1">
-       
-        <tr>
-            <th>ユーザー名</th>
-            <th>メールアドレス</th>
-            <th>常勤/非常勤</th>
-        </tr>
+    </div>
+    <input type="submit" value="登録">
+</form>
+<table border="1">
 
-        @foreach ($items as $item)
-        <tr>
-            <td>{{$item->teacher_name}}</td>
-            <td>{{$item->email}}</td>
-            <td>
-                @if($item->normal === 0)
-                    常勤
-                @else
-                    非常勤
-                @endif
-            </td>
-        </tr>
-        @endforeach
-    </table>
-@endsection   
-   
- 
+    <tr>
+        <th>ユーザー名</th>
+        <th>メールアドレス</th>
+        <th>常勤/非常勤</th>
+    </tr>
+
+    @isset($users)
+    aaaa
+    @foreach($users as $user)
+        <p>{{$user->teacher_name}}</p>
+        <p>{{$user->email}}</p>
+        <p>{{$user->normal}}</p>
+    @endforeach
+    @endisset
+
+    @isset($request)
+    {{$request}}
+    @endisset
+</table>
+@endsection

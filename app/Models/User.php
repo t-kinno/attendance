@@ -30,11 +30,6 @@ class User extends Authenticatable
         'manager_flag',
     ];
 
-    // public static $rules = array(
-    //     'teacher_name' => 'required',
-    //     'email' > 'email',
-    // );
-
     /**
      * The attributes that should be hidden for serialization.
      *
