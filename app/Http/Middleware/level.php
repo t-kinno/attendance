@@ -20,7 +20,6 @@ class level
         if (session()->get('level') !== 1) {
             return redirect('/menu')->with('level_error', 'レベルエラー');
         }
-
         return $next($request);
     }
 }

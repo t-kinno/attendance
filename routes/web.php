@@ -31,8 +31,8 @@ Route::group(['middleware' => ['auth', 'level']], function () {
     /****************************  
     ユーザー登録
     *****************************/
-    Route::get('/users', [UserController::class, 'index']);
-    Route::post('/users', [UserController::class, 'create']);
+    Route::get('/user', [UserController::class, 'index']);
+    Route::post('/user', [UserController::class, 'create']);
 
 
     /****************************  

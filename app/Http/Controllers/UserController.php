@@ -10,13 +10,18 @@ class UserController extends Controller
    // DBからデータを取得
    public function index(Request $request)
    {
-       $user_data = User::get('id')
-       return view('', ['user_data' => $user_data]);
+        $items = User::get();
+        return view('user.list', ['items' => $items]);
    }
    
    // DBにデータを挿入
    public function create(Request $request)
    {
-    
+        $user = new User;
+        $form_data = $request->all();
+        // unset($form_data['_token']);
+        $user->fill($form_data)->save();
+
+        return redirect('/user');
    }
 }
