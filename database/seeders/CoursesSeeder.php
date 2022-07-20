@@ -21,12 +21,26 @@ class CoursesSeeder extends Seeder
             [
                 'course_name' => 'Web専攻',
                 'department_id' => 1,
-                'del_flag' => false,
             ],
             [
                 'course_name' => 'Unity専攻',
                 'department_id' => 1,
-                'del_flag' => false,
+            ],
+            [
+                'course_name' => 'Web専攻',
+                'department_id' => 5,
+            ],
+            [
+                'course_name' => 'Unity専攻',
+                'department_id' => 5,
+            ],
+            [
+                'course_name' => 'Web専攻',
+                'department_id' => 8,
+            ],
+            [
+                'course_name' => 'Unity専攻',
+                'department_id' => 8,
             ],
         ]);
     }

@@ -17,28 +17,88 @@ class SubjectsSeeder extends Seeder
     {
         DB::table('subjects')->insert([
             [
-                'subject_name' => 'テクノロジ',
+                'subject_name' => 'office',
                 'rulesubject_id' => 1,
-                'chord_id' => 1,
-                'teacher_id' => 1,
-                'subject_semester' => 0,
-                'del_flag' => false,
+                'chord_id' => 3,
+                'teacher_id' => 4,
+                'subject_semester' => 0
             ],
             [
-                'subject_name' => 'Office入門',
+                'subject_name' => 'office',
                 'rulesubject_id' => 2,
-                'chord_id' => 4,
-                'teacher_id' => 2,
-                'subject_semester' => 1,
-                'del_flag' => false,
+                'chord_id' => 6,
+                'teacher_id' => 4,
+                'subject_semester' => 0
             ],
             [
-                'subject_name' => 'Ｐｙｔｈｏｎ言語',
+                'subject_name' => 'WebプログラミングⅢ',
                 'rulesubject_id' => 3,
+                'chord_id' => 3,
+                'teacher_id' => 2,
+                'subject_semester' => 0
+            ],
+            [
+                'subject_name' => 'ゲーム制作Ⅰ',
+                'rulesubject_id' => 4,
+                'chord_id' => 6,
+                'teacher_id' => 5,
+                'subject_semester' => 0
+            ],
+            [
+                'subject_name' => '卒業研究ー開発',
+                'rulesubject_id' => 5,
+                'chord_id' => 3,
+                'teacher_id' => 1,
+                'subject_semester' => 1
+            ],
+            [
+                'subject_name' => '卒業研究ー開発',
+                'rulesubject_id' => 6,
                 'chord_id' => 6,
                 'teacher_id' => 1,
-                'subject_semester' => 0,
-                'del_flag' => false,
+                'subject_semester' => 1
+            ],
+            [
+                'subject_name' => '卒業研究ー企画',
+                'rulesubject_id' => 7,
+                'chord_id' => 3,
+                'teacher_id' => 1,
+                'subject_semester' => 0
+            ],
+            [
+                'subject_name' => '卒業研究ー企画',
+                'rulesubject_id' => 8,
+                'chord_id' => 6,
+                'teacher_id' => 1,
+                'subject_semester' => 0
+            ],
+            [
+                'subject_name' => '卒業研究ー報告',
+                'rulesubject_id' => 1,
+                'chord_id' => 3,
+                'teacher_id' => 1,
+                'subject_semester' => 1
+            ],
+            [
+                'subject_name' => '卒業研究ー報告',
+                'rulesubject_id' => 1,
+                'chord_id' => 6,
+                'teacher_id' => 1,
+                'subject_semester' => 1
+            ],
+            [
+                'subject_name' => '就職活動',
+                'rulesubject_id' => 7,
+                'chord_id' => 3,
+                'teacher_id' => 1,
+                'subject_semester' => 0
+            ],
+            [
+                'subject_name' => '就職活動',
+                'rulesubject_id' => 7,
+                'chord_id' => 6,
+                'teacher_id' => 1,
+                'subject_semester' => 0
             ],
         ]);
     }

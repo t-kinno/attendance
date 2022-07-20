@@ -18,19 +18,16 @@ class HolidaysSeeder extends Seeder
     {
         DB::table('holidays')->insert([
             [
-                'holiday' => '2020/05/03',
-                'holiday_cause' => '建国記念日',
-                'del_flag' => false,
-            ],
-            [
-                'holiday' => '2020/07/30',
+                'holiday' => '2022/07/30',
                 'holiday_cause' => '夏季休業',
-                'del_flag' => false,
             ],
             [
-                'holiday' => '2020/06/13',
-                'holiday_cause' => '学校公開日',
-                'del_flag' => true,
+                'holiday' => '2022/08/21',
+                'holiday_cause' => '夏季休業',
+            ],
+            [
+                'holiday' => '2022/09/20',
+                'holiday_cause' => 'ジョビFes代休日',
             ],
         ]);
     }
