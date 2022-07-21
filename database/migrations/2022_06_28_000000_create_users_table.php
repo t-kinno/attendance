@@ -20,11 +20,8 @@ class CreateUsersTable extends Migration
             $table->integer('normal');
             $table->string('password');
             $table->boolean('flag');
-            $table->dateTime('record_date');
-            $table->dateTime('update_date');
             $table->boolean('del_flag');
 
-            $table->string('api_token', 80)->unique()->nullable()->default(null)->comment('guardが参照するapi_token');
             $table->boolean('manager_flag')->default(false)->comment('trueだとadmin権限を持つ');
 
             // timestampsは絶対必要

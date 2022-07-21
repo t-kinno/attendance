@@ -23,10 +23,7 @@ class User extends Authenticatable
         'normal',
         'password',
         'flag',
-        'record_date',
-        'update_date',
         'del_flag',
-        'api_token',
         'manager_flag',
     ];
 

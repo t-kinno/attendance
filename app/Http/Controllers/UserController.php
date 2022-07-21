@@ -28,6 +28,10 @@ class UserController extends Controller
           //    $form_data = $request->all();
           unset($form_data['_token']);
           $user->password = Str::random(10);
+
+          $user->flag = 0;
+          $user->del_flag = 0;
+
           $user->fill($form_data)->save();
 
           // return view('user.list', ['users' => $user, 'request' => $request, 'pw'=>$random]);
