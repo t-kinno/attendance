@@ -15,19 +15,20 @@ class DatabaseSeeder extends Seeder
     {
         //seederの呼び出しを行う。
         $this->call([
-            // UserSeeder::class,
+            UserSeeder::class,
             DepartmentsTableSeeder::class,
             CoursesSeeder::class,
             ChordsSeeder::class,
             StudentsSeeder::class,
-            // RulesubjectsSeeder::class,
-            // TeachersSeeder::class,
-            // SubjectsSeeder::class,
-            // LecturesSeeder::class,
-            // TimetablesSeeder::class,
-            // HolidaysSeeder::class,
-            // CheckSeeder::class,
-
+            RulesubjectsSeeder::class,
+            TeachersSeeder::class,
+            SubjectsSeeder::class,
+            LecturesSeeder::class,
+            TimetablesSeeder::class,
+            HolidaysSeeder::class,
+            CheckSeeder::class,
+            AttendSeeder::class,
+            ChangeDepartmentsSeeder::class
         ]);
     }
 }

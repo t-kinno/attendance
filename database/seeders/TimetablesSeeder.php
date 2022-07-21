@@ -34,6 +34,7 @@ class TimetablesSeeder extends Seeder
                 'timetable_day' => '2022/09/27',
                 'subject_id_period_1' => 5,
                 'subject_id_period_2' => 5,
+                'subject_id_period_3' => 0,
                 'chord_id' => 3
             ],
             [
@@ -54,6 +55,7 @@ class TimetablesSeeder extends Seeder
                 'timetable_day' => '2022/09/27',
                 'subject_id_period_1' => 6,
                 'subject_id_period_2' => 6,
+                'subject_id_period_3' => 0,
                 'chord_id' => 6
             ],
         ]);

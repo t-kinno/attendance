@@ -17,37 +17,16 @@ class AttendSeeder extends Seeder
     {
         DB::table('attend')->insert([
             [
-                'check_day' => '2020/05/20',
+                'attend_day' => '2022/07/20',
                 'student_id' => 1,
-                'chord_id' => 1,
-                'attend_type' => 1,
-                'check_period' => 2,
-                'attend_id' => 1,
+                'chord_id' => 3,
+                'attend_type' => 4,
             ],
             [
-                'check_day' => '2020/05/20',
-                'student_id' => 1,
-                'subject_id' => 2,
-                'check_type' => 1,
-                'check_period' => 3,
-                'attend_id' => 2,
-            ],
-            [
-                'check_day' => '2020/06/22',
-                'student_id' => 2,
-                'subject_id' => 3,
-                'check_type' => 2,
-                'check_period' => 3,
-                'attend_id' => 3,
-            ],
-            [
-                'check_day' => '2020/06/22',
-                'student_id' => 2,
-                'subject_id' => 3,
-                'check_type' => 2,
-                'check_period' => 2,
-                'attend_id' => 4,
-                'del_flag' => true,
+                'attend_day' => '2022/07/21',
+                'student_id' => 3,
+                'chord_id' => 6,
+                'attend_type' => 0,
             ],
         ]);
     }

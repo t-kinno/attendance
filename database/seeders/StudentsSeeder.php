@@ -24,6 +24,7 @@ class StudentsSeeder extends Seeder
                 'student_gender' => 0,
                 'department_id' => 1,
                 'course_id' => 1,
+                'flag' => false,
             ],
             [
                 'student_number' => 4203114,
@@ -32,6 +33,7 @@ class StudentsSeeder extends Seeder
                 'student_gender' => 0,
                 'department_id' => 1,
                 'course_id' => 2,
+                'flag' => false,
             ],
             [
                 'student_number' => 4203113,
@@ -40,6 +42,7 @@ class StudentsSeeder extends Seeder
                 'student_gender' => 1,
                 'department_id' => 1,
                 'course_id' => 2,
+                'flag' => false,
             ],
             [
                 'student_number' => 4201101,
@@ -47,6 +50,7 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'おおぬまとおる',
                 'student_gender' => 1,
                 'department_id' => 2,
+                'course_id' => 0,
                 'flag' => true,
             ],
             [
@@ -55,6 +59,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'みかみめぐみ',
                 'student_gender' => 1,
                 'department_id' => 3,
+                'course_id' => 0,
+                'flag' => false,
             ],
             [
                 'student_number' => 4202101,
@@ -62,6 +68,7 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'いわたしょうた',
                 'student_gender' => 1,
                 'department_id' => 4,
+                'course_id' => 0,
                 'flag' => true,
             ],
             [
@@ -71,6 +78,7 @@ class StudentsSeeder extends Seeder
                 'student_gender' => 0,
                 'department_id' => 5,
                 'course_id' => 3,
+                'flag' => false,
             ],
             [
                 'student_number' => 4213111,
@@ -79,6 +87,7 @@ class StudentsSeeder extends Seeder
                 'student_gender' => 1,
                 'department_id' => 5,
                 'course_id' => 4,
+                'flag' => false,
             ],
             [
                 'student_number' => 4211101,
@@ -86,6 +95,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'おがわよしあき',
                 'student_gender' => 0,
                 'department_id' => 6,
+                'course_id' => 0,
+                'flag' => false,
             ],
             [
                 'student_number' => 4214101,
@@ -93,6 +104,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'おかもとゆうへい',
                 'student_gender' => 0,
                 'department_id' => 7,
+                'course_id' => 0,
+                'flag' => false,
             ],
             [
                 'student_number' => 4223103,
@@ -100,6 +113,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'きたまさと',
                 'student_gender' => 0,
                 'department_id' => 8,
+                'course_id' => 0,
+                'flag' => false,
             ],
             [
                 'student_number' => 4221119,
@@ -107,6 +122,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'もりあや',
                 'student_gender' => 1,
                 'department_id' => 9,
+                'course_id' => 0,
+                'flag' => false,
             ],
             [
                 'student_number' => 422414,
@@ -114,6 +131,8 @@ class StudentsSeeder extends Seeder
                 'student_ruby' => 'さとうともあき',
                 'student_gender' => 0,
                 'department_id' => 10,
+                'course_id' => 0,
+                'flag' => false,
             ],
         ]);
     }

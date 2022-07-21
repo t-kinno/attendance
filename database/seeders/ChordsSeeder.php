@@ -49,34 +49,42 @@ class ChordsSeeder extends Seeder
             [
                 'department_id' => 2,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 2,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 3,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 3,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 3,
                 'chord_year' => 3,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 3,
                 'chord_year' => 4,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 4,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 4,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 5,
@@ -111,26 +119,32 @@ class ChordsSeeder extends Seeder
             [
                 'department_id' => 6,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 6,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 7,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 7,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 7,
                 'chord_year' => 3,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 7,
                 'chord_year' => 4,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 8,
@@ -165,26 +179,32 @@ class ChordsSeeder extends Seeder
             [
                 'department_id' => 9,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 9,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 10,
                 'chord_year' => 1,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 10,
                 'chord_year' => 2,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 10,
                 'chord_year' => 3,
+                'course_id' => 0,
             ],
             [
                 'department_id' => 10,
                 'chord_year' => 4,
+                'course_id' => 0,
             ],
         ]);
     }
