@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -17,22 +18,20 @@ class UserController extends Controller
      // DBにデータを挿入
      public function create(Request $request)
      {
-          //    $user = new User;
-          //    $form_data = $request->all();
-          //    // unset($form_data['_token']);
-          //    $user->fill($form_data)->save();
-
-          //    return redirect('/user');
-
           $rules = [
                'teacher_name' => 'required',
                'email' => ['required', 'email'],
-               'normla' => 'required',
+               'normal' => 'required',
           ];
+          $user = new User;
+          $form_data = $this->validate($request, $rules);
+          //    $form_data = $request->all();
+          unset($form_data['_token']);
+          $user->password = Str::random(10);
+          $user->fill($form_data)->save();
 
-          $user = $this->validate($request, $rules);
+          // return view('user.list', ['users' => $user, 'request' => $request, 'pw'=>$random]);
 
-
-          return view('user.list', ['users' => $user, 'request'=>$request]);
+          return redirect('/user');
      }
 }
