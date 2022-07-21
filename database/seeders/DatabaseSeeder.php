@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         //seederの呼び出しを行う。
         $this->call([
-            UserSeeder::class,
+            UsersSeeder::class,
             DepartmentsTableSeeder::class,
             CoursesSeeder::class,
             ChordsSeeder::class,
