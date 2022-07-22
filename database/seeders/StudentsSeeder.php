@@ -126,7 +126,7 @@ class StudentsSeeder extends Seeder
                 'flag' => false,
             ],
             [
-                'student_number' => 422414,
+                'student_number' => 4224114,
                 'student_name' => '佐藤友彰',
                 'student_ruby' => 'さとうともあき',
                 'student_gender' => 0,

@@ -14,7 +14,8 @@ use App\Models\Student;
 class StudentController extends Controller
 {
     public function index(Request $request){
-        return view('student.register');
+        $items = Student::get();
+        return view('student.list', ['items' => $items]);
     }
     public function student(Request $request){
         return view('student.list');
