@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
@@ -27,7 +28,8 @@ class UserController extends Controller
           $form_data = $this->validate($request, $rules);
           //    $form_data = $request->all();
           unset($form_data['_token']);
-          $user->password = Str::random(10);
+
+          $user->password = Hash::make('test');
 
           $user->flag = 0;
           $user->del_flag = 0;

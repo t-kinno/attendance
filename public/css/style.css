@@ -11,3 +11,7 @@
     height: 90vh;
     background-color: rgb(153, 255, 0);
 }
+
+#edit_user{
+    display: block;
+}
