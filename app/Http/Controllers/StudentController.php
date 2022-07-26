@@ -11,6 +11,9 @@ use Illuminate\Support\Str;
 
 use App\Models\Student;
 
+use App\Imports\TestStudentImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class StudentController extends Controller
 {
     public function index(Request $request){
@@ -19,5 +22,17 @@ class StudentController extends Controller
     }
     public function student(Request $request){
         return view('student.list');
+    }
+
+    // csvファイルによる生徒情報登録
+    public function add(Request $request){
+        return view('student.add');
+    }
+
+    public function import(Request $request){
+        $excel_file = $request->file('excel_file');
+        $excel_file->store('excels');
+        Excel::import(new TestStudentImport, $excel_file);
+        return view('student.add');
     }
 }

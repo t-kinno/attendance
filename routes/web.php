@@ -59,3 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
 生徒情報
 /****************************/
 Route::get('/student', [StudentController::class, 'index']);
+
+    // 情報登録
+    Route::get('/students_import',[StudentController::class, 'add']);
+    Route::post('/students_import',[StudentController::class, 'import'])->name('import');
