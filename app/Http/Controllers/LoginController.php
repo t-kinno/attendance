@@ -24,10 +24,14 @@ class LoginController extends Controller
         //attempt()でユーザを認証する。
         if(Auth::guard($guard)->attempt($credentials)) {
             $user_info = User::whereEmail($request->email)->first(); //userのメールアドレスの取得
-            $manager_flag = $user_info->manager_flag;
-
-            session()->put('level', $manager_flag);
-            return redirect('/menu');
+            $valid_flag = $user_info->flag;
+            if($valid_flag === 0){
+                $manager_flag = $user_info->manager_flag;
+                session()->put('level', $manager_flag);
+                return redirect('/menu');
+            } else {
+                return redirect('/')->with('flash_valid', 'このアカウントは無効化されています');
+            }
         }
         return redirect('/')->with('flash_message', 'ログインしてください');
     }

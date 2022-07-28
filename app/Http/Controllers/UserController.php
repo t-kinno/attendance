@@ -16,6 +16,15 @@ class UserController extends Controller
           return view('user.list', ['items' => $items]);
      }
 
+     public function which(Request $request)
+     {
+          if($request->has("create")){
+               $this->create($request);
+          } else if($request->has("edit")){
+               $this->edit($request);
+          }
+     }
+
      // DBにデータを挿入
      public function create(Request $request)
      {
@@ -24,19 +33,35 @@ class UserController extends Controller
                'email' => ['required', 'email'],
                'normal' => 'required',
           ];
+
           $user = new User;
+          
           $form_data = $this->validate($request, $rules);
-          //    $form_data = $request->all();
           unset($form_data['_token']);
-
           $user->password = Hash::make('test');
-
           $user->flag = 0;
           $user->del_flag = 0;
 
           $user->fill($form_data)->save();
 
-          // return view('user.list', ['users' => $user, 'request' => $request, 'pw'=>$random]);
+          return redirect('/user');
+     }
+
+     public function edit(Request $request)
+     {
+          $rules = [
+               'teacher_name' => 'required',
+               'email' => ['required', 'email'],
+               'normal' => 'required',
+               'manager_flag' => 'required',
+               'flag' => 'required',
+          ];
+
+          $user = User::find($request->id);
+
+          $form_data = $this->validate($request, $rules);
+          unset($form_data['_token']);
+          $user->fill($form_data)->save();
 
           return redirect('/user');
      }

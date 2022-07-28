@@ -5,11 +5,17 @@
 }
 #main .flex{
     display: flex;
+    height: 90vh;
 }
 #main #side_menu{
     width: 10%;
-    height: 90vh;
     background-color: rgb(153, 255, 0);
+}
+#main #content{
+    width: 90%;
+}
+#main .invalid{
+    background-color: #cccccc;
 }
 
 #edit_user{

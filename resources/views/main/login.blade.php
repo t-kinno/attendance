@@ -9,6 +9,13 @@
     <title>ログイン</title>
 </head>
 <!-- フラッシュメッセージ -->
+@if (session('flash_valid'))
+<div class="flash_valid">
+    {{ session('flash_valid') }}
+</div>
+@endif
+
+<!-- フラッシュメッセージ -->
 @if (session('flash_message'))
 <div class="flash_message">
     {{ session('flash_message') }}

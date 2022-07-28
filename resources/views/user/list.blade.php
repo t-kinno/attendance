@@ -6,7 +6,7 @@
 <h1>ユーザー登録ページ</h1>
 <p>ここはユーザー登録閲覧・登録・編集画面です。</p>
 
-<form action="/user" method="post">
+<form id="user" method="post">
     @csrf
     <div>
         @if ($errors->has('teacher_name'))
@@ -27,7 +27,7 @@
         <label><input type="radio" name="normal" value="0" checked>常勤</label>
         <label><input type="radio" name="normal" value="1">非常勤</label>
     </div>
-    <input type="submit" value="登録">
+    <input type="submit" name="create" value="登録">
 </form>
 <table border="1">
 
@@ -40,7 +40,7 @@
 
     @isset($items)
         @foreach ($items as $item)
-            <tr>
+            <tr class="{{$item->flag ? 'invalid' : ''}}">
                 <td>{{$item->teacher_name}}</td>
                 <td>{{$item->email}}</td>
                 <td>
@@ -51,24 +51,30 @@
                     @endif
                 </td>
                 <td>{{$item->manager_flag}}</td>
-                <td><button>編集</button></td>
+                <!-- <td>{{$item->id}}</td> -->
+                <td><button class="edit_button" name="edit_name" data-id="{{$item->id}}" data-teacher_name="{{$item->teacher_name}}" data-email="{{$item->email}}" data-normal="{{$item->normal}}" data-manager_flag="{{$item->manager_flag}}" data-flag="{{$item->flag}}">編集</button></td>
             </tr>
         @endforeach
     @endisset
     
 </table>
 
+<form id="edit_user" method="post">
+    <input type="hidden" name="id">
 
-<form action="" id="edit_user" method="post">
     <label>ユーザー名：<input type="text" name="teacher_name"></label>
     <label>メールアドレス：<input type="text" name="email"></label>
 
-    <label><input type="radio" name="normal" value="0">常勤</label>
-    <label><input type="radio" name="normal" value="1">非常勤</label>
+    <label><input id="normal_radio_1" type="radio" name="normal" value="0">常勤</label>
+    <label><input id="normal_radio_2" type="radio" name="normal" value="1">非常勤</label>
 
-    <label><input type="checkbox" name="manager_level">管理者</label>
+    <input type="hidden" name="manager_flag" value="0">
+    <label><input type="checkbox" name="manager_flag" value="1">管理者</label>
 
-    <input type="submit" value="登録">
+    <label><input id="valid_radio_1" type="radio" name="flag" value="0">有効</label>
+    <label><input id="valid_radio_2" type="radio" name="flag" value="1">無効</label>
+
+    <input type="submit" name="edit" value="更新">
 </form>
 
 @endsection
